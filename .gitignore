@@ -1,0 +1,7 @@
+﻿AppTest/Library
+AppTest/obj
+AppTest/Logs
+AppTest/.vs
+AppTest/AppTest'.sln
+AppTest/Assembly-CSharp.csproj
+AppTest/.vsconfig
