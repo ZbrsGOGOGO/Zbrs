@@ -157,7 +157,7 @@ public class Gameui : MonoBehaviour
                                 //±³¾°Î»ÒÆ
         beijing.transform.position -= Vector3.right * speed * Time.deltaTime;
         beiingone.transform.position -= Vector3.right * speed * Time.deltaTime;
-        if (timer > 26.4)
+        if (timer > 34.16)
         {
             beijing.transform.position = b;
             timer = 0;
