@@ -142,8 +142,8 @@ public class Gameui : MonoBehaviour
         //方法2：
         timer += Time.deltaTime;//每帧的增加时间
                                 //背景位移
-        beijing.transform.position += Vector3.right * speed * Time.deltaTime;
-        if (timer > 20)
+        beijing.transform.position -= Vector3.right * speed * Time.deltaTime;
+        if (timer > 11)
         {
             beijing.transform.position = a;
             timer = 0;
