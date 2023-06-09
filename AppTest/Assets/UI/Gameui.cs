@@ -26,20 +26,22 @@ public class Gameui : MonoBehaviour
     /// 背景图
     /// </summary>
     public Image beijing;
+    public Image beiingone;
 
     /// <summary>
     /// 位置记录
     /// </summary>
     private Vector3 a;
-    void Start()
+    private Vector3 b;
+    private void Start()
     {
 
         a = beijing.transform.position;//锁定背景原来的位置
+        b = beiingone.transform.position;
         Fanhui.onClick.AddListener(FanhuiBtnLogic);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Diaoluo();
         Timer();
@@ -79,6 +81,12 @@ public class Gameui : MonoBehaviour
         }
     }
 
+    public Sprite one;
+    public Sprite two;
+    public Sprite three;
+    public Sprite four;
+
+
     /// <summary>
     /// 随机四个点掉落
     /// </summary>
@@ -91,18 +99,22 @@ public class Gameui : MonoBehaviour
         if (a == 1)
         {
             Sphere.transform.position = pointone.transform.position;
+            Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = one;
         }
         if (a == 2)
         {
             Sphere.transform.position = pointtwo.transform.position;
+            Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = two;
         }
         if (a == 3)
         {
             Sphere.transform.position = pointthree.transform.position;
+            Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = three;
         }
         if (a == 4)
         {
             Sphere.transform.position = pointfour.transform.position;
+            Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = four;
         }
     }
 
@@ -124,7 +136,7 @@ public class Gameui : MonoBehaviour
     /// <summary>
     /// //背景移动速度
     /// </summary>
-    float speed = 200;
+    float speed = 100;
     /// <summary>
     /// //时间
     /// </summary>
@@ -135,17 +147,19 @@ public class Gameui : MonoBehaviour
     /// </summary>
     private void Timer()//背景场地移动
     {
-        /*方法1：重复函数的调用，使背景重复移动，30为背景板的长度
-		float f = Mathf.Repeat(speed * Time.time, 30);
-		transform.position = a + Vector3.back * f;
-		*/
-        //方法2：
+
+        //float f = Mathf.Repeat(speed * Time.time, 1920);
+        //beijing.transform.position = a - Vector3.right * f;
+        //beiingone.transform.position = b - Vector3.right * f;
+
+        ////方法2：
         timer += Time.deltaTime;//每帧的增加时间
                                 //背景位移
         beijing.transform.position -= Vector3.right * speed * Time.deltaTime;
-        if (timer > 11)
+        beiingone.transform.position -= Vector3.right * speed * Time.deltaTime;
+        if (timer > 26.4)
         {
-            beijing.transform.position = a;
+            beijing.transform.position = b;
             timer = 0;
         }
     }
