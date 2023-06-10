@@ -6,7 +6,9 @@ public class Clone : MonoBehaviour
 {
 
     private float a = 12;
-   
+
+
+    public int id;
 
     // Update is called once per frame
     void Update()

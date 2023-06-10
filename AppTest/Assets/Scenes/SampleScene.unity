@@ -412,7 +412,6 @@ GameObject:
   m_Component:
   - component: {fileID: 83105309}
   - component: {fileID: 83105308}
-  - component: {fileID: 83105307}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -420,14 +419,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &83105307
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83105306}
-  m_Enabled: 1
 --- !u!20 &83105308
 Camera:
   m_ObjectHideFlags: 0
@@ -1609,6 +1600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8704c90378f435b43828d8774fc2f395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
 --- !u!1 &385955166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,7 +3270,7 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -5025,7 +5017,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1324854764
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5042,7 +5034,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1341107886
 GameObject:
   m_ObjectHideFlags: 0
@@ -5868,11 +5861,19 @@ MonoBehaviour:
   pointtwo: {fileID: 616413820}
   pointthree: {fileID: 625945768}
   pointfour: {fileID: 1614090113}
-  time: 2
   one: {fileID: 21300000, guid: 90fbb3717adfe2946baccdac8d26baa7, type: 3}
   two: {fileID: 21300000, guid: a9a74c81ece4007408f772ae00917809, type: 3}
   three: {fileID: 21300000, guid: 4f7d56bc92339094ca0d5cfcca7bfcc2, type: 3}
   four: {fileID: 21300000, guid: 4bdf30bfffef5004e9bd9659eccfadce, type: 3}
+  BtnOne: {fileID: 273089246}
+  BtnTwo: {fileID: 1760668686}
+  BtnThree: {fileID: 1445269531}
+  BtnFour: {fileID: 1856666258}
+  time: 2
+  aa: 0
+  bb: 0
+  cc: 0
+  dd: 0
 --- !u!82 &1486192392
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7059,7 +7060,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1686803779
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7076,7 +7077,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1699681149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8574,6 +8576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8704c90378f435b43828d8774fc2f395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
 --- !u!50 &2105510198
 Rigidbody2D:
   serializedVersion: 4
