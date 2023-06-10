@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 40418956268268e4a9c20b2022f81984
+guid: 7ba204245a67f3741bab92ba4826a879
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.013
-    second: {fileID: 2100000, guid: c7e372e944f329640b5dff44ecf9e1d5, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: gangnamStyle
+      name: Thriller3
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 95
+      lastFrame: 62
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
