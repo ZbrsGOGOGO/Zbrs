@@ -66,7 +66,8 @@ public class Gameui : MonoBehaviour
         BtnThree.onClick.AddListener(PointButtonthree);
         BtnFour.onClick.AddListener(PointButtonfour);
     }
-
+    public AudioClip right;
+    public AudioClip err;
     private void Update()
     {
         Diaoluo();
@@ -155,29 +156,39 @@ public class Gameui : MonoBehaviour
         {
             Debug.Log("0分物体不会消失");
             Debug.Log("播放失败音效" + "扣血");
+            this.GetComponent<AudioSource>().clip = err;
+            this.GetComponent<AudioSource>().Play();
         }
         if (distance < 80 && distance > 70)
         {
             Destroy(one);
             Debug.Log("播放成功音效");
+            this.GetComponent<AudioSource>().clip = right;
+            this.GetComponent<AudioSource>().Play();
         }
         if (distance < 70 && distance > 60)
         {
             Destroy(one);
             Debug.Log("2分物体消失");
             Debug.Log("播放成功音效");
+            this.GetComponent<AudioSource>().clip = right;
+            this.GetComponent<AudioSource>().Play();
         }
         if (distance < 60 && distance > 30)
         {
             Destroy(one);
             Debug.Log("3分物体消失");
             Debug.Log("播放成功音效");
+            this.GetComponent<AudioSource>().clip = right;
+            this.GetComponent<AudioSource>().Play();
         }
         if (distance < 30 && distance > 0)
         {
             Destroy(one);
             Debug.Log("5分物体消失");
             Debug.Log("播放成功音效");
+            this.GetComponent<AudioSource>().clip = right;
+            this.GetComponent<AudioSource>().Play();
         }
     }
 
