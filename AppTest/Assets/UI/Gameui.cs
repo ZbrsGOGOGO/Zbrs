@@ -154,31 +154,38 @@ public class Gameui : MonoBehaviour
         if (distance > 80)
         {
             Debug.Log("0分物体不会消失");
+            Debug.Log("播放失败音效" + "扣血");
         }
         if (distance < 80 && distance > 70)
         {
             Destroy(one);
+            Debug.Log("播放成功音效");
         }
         if (distance < 70 && distance > 60)
         {
             Destroy(one);
             Debug.Log("2分物体消失");
+            Debug.Log("播放成功音效");
         }
         if (distance < 60 && distance > 30)
         {
             Destroy(one);
             Debug.Log("3分物体消失");
+            Debug.Log("播放成功音效");
         }
         if (distance < 30 && distance > 0)
         {
             Destroy(one);
             Debug.Log("5分物体消失");
+            Debug.Log("播放成功音效");
         }
     }
 
 
     public void PointButtonone()
     {
+
+        Debug.Log("播放动画1");
         //判断掉落路径上是否有物品
         if (listone != null)
         {
@@ -192,17 +199,18 @@ public class Gameui : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("sss");
+                    Debug.Log("播放失败音效" + "扣血");
                 }
             }
         }
         else
         {
-            Debug.Log("没有物品掉落");
+            Debug.Log("播放失败音效" + "扣血");
         }
     }
     public void PointButtontwo()
     {
+        Debug.Log("播放动画2");
         //判断掉落路径上是否有物品
         if (listtwo != null)
         {
@@ -216,18 +224,19 @@ public class Gameui : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("sss");
+                    Debug.Log("播放失败音效"+"扣血");
                 }
             }
         }
         else
         {
-            Debug.Log("没有物品掉落");
+            Debug.Log("播放失败音效" + "扣血");
         }
     }
 
     public void PointButtonthree()
     {
+        Debug.Log("播放动画3");
         //判断掉落路径上是否有物品
         if (listthree != null)
         {
@@ -240,18 +249,19 @@ public class Gameui : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("sss");
+                    Debug.Log("播放失败音效");
                 }
             }
         }
         else
         {
-            Debug.Log("没有物品掉落");
+            Debug.Log("播放失败音效");
         }
     }
 
     public void PointButtonfour()
     {
+        Debug.Log("播放动画4");
         //判断掉落路径上是否有物品
         if (listfour != null)
         {
@@ -265,13 +275,13 @@ public class Gameui : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("sss");
+                    Debug.Log("播放失败音效");
                 }
             }
         }
         else
         {
-            Debug.Log("没有物品掉落");
+            Debug.Log("播放失败音效");
         }
     }
 
