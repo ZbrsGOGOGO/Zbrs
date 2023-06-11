@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Gameui : MonoBehaviour
 {
+
+
+    public GameObject qingwa;
     /// <summary>
     /// 返回按钮
     /// </summary>
@@ -192,10 +195,11 @@ public class Gameui : MonoBehaviour
         }
     }
 
-
+    private Animator anil;
     public void PointButtonone()
     {
-
+        anil =  qingwa.transform.GetComponent<Animator>();
+        anil.SetInteger("one", 1);
         Debug.Log("播放动画1");
         //判断掉落路径上是否有物品
         if (listone != null)
@@ -221,6 +225,7 @@ public class Gameui : MonoBehaviour
     }
     public void PointButtontwo()
     {
+        anil.SetInteger("two", 1);
         Debug.Log("播放动画2");
         //判断掉落路径上是否有物品
         if (listtwo != null)
@@ -247,6 +252,7 @@ public class Gameui : MonoBehaviour
 
     public void PointButtonthree()
     {
+        anil.SetInteger("three", 1);
         Debug.Log("播放动画3");
         //判断掉落路径上是否有物品
         if (listthree != null)
@@ -272,6 +278,7 @@ public class Gameui : MonoBehaviour
 
     public void PointButtonfour()
     {
+        anil.SetInteger("four", 1);
         Debug.Log("播放动画4");
         //判断掉落路径上是否有物品
         if (listfour != null)
