@@ -5,18 +5,30 @@ using UnityEngine;
 public class Clone : MonoBehaviour
 {
 
-    private float a = 12;
-
-
+    /// <summary>
+    /// 是否被击中
+    /// </summary>
+    public bool isPoint;
+    /// <summary>
+    /// 所属id
+    /// </summary>
     public int id;
 
-    // Update is called once per frame
+    /// <summary>
+    /// 是否被销毁
+    /// </summary>
+    public bool isDes;
+
+    public float pos;
+
+
+    private float a = 8;
     void Update()
     {
-        a -= Time.deltaTime;
-        if (a<0)
+        pos = transform.position.y;
+        if (this.transform.position.y < 209.7709)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }

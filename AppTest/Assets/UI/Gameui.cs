@@ -61,10 +61,10 @@ public class Gameui : MonoBehaviour
         a = beijing.transform.position;//锁定背景原来的位置
         b = beiingone.transform.position;
         Fanhui.onClick.AddListener(FanhuiBtnLogic);
-        BtnOne.onClick.AddListener(PointButton);
-        BtnTwo.onClick.AddListener(PointButton);
-        BtnThree.onClick.AddListener(PointButton);
-        BtnFour.onClick.AddListener(PointButton);
+        BtnOne.onClick.AddListener(PointButtonone);
+        BtnTwo.onClick.AddListener(PointButtontwo);
+        BtnThree.onClick.AddListener(PointButtonthree);
+        BtnFour.onClick.AddListener(PointButtonfour);
     }
 
     private void Update()
@@ -100,14 +100,10 @@ public class Gameui : MonoBehaviour
         }
     }
 
-
-
-    public float aa;
-    public float bb;
-    public float cc;
-    public float dd;
-    
-
+    public List<GameObject> listone;
+    public List<GameObject> listtwo;
+    public List<GameObject> listthree;
+    public List<GameObject> listfour;
     /// <summary>
     /// 随机四个点掉落
     /// </summary>
@@ -117,37 +113,32 @@ public class Gameui : MonoBehaviour
         GameObject Sphere = GameObject.Instantiate(clone) as GameObject;
         time = 3f;
         Sphere.transform.SetParent(ThisPanel.transform);
+        Sphere.AddComponent<Clone>();
         if (a == 1)
         {
             Sphere.transform.position = pointone.transform.position;
             Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = one;
-            Sphere.GetComponent<Clone>().id = 1;
-            float distance = (Sphere.transform.position - BtnOne.transform.position).magnitude;
-            Debug.Log("1"+ distance);
+            listone.Add(Sphere);
         }
         if (a == 2)
         {
             Sphere.transform.position = pointtwo.transform.position;
             Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = two;
-            Sphere.GetComponent<Clone>().id = 2;
-            float distance = (Sphere.transform.position - BtnTwo.transform.position).magnitude;
-            Debug.Log("2" + distance);
+            listtwo.Add(Sphere);
+
         }
         if (a == 3)
         {
             Sphere.transform.position = pointthree.transform.position;
             Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = three;
-            Sphere.GetComponent<Clone>().id = 3;
-            float distance = (Sphere.transform.position - BtnThree.transform.position).magnitude;
-            Debug.Log("3" + distance);
+            listthree.Add(Sphere);
+
         }
         if (a == 4)
         {
             Sphere.transform.position = pointfour.transform.position;
             Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = four;
-            Sphere.GetComponent<Clone>().id = 4;
-            float distance = (Sphere.transform.position - BtnFour.transform.position).magnitude;
-            Debug.Log("4" + distance);
+            listfour.Add(Sphere);
         }
     }
 
@@ -157,39 +148,133 @@ public class Gameui : MonoBehaviour
     /// </summary>
     /// <param name="one"></param>
     /// <param name="two"></param>
-    public void  Far(GameObject one ,GameObject two)
+    public void Far(GameObject one, GameObject two)
     {
-       float distance = (one.transform.position - two.transform.position).magnitude;
-        if (distance>3)
+        float distance = (one.transform.position - two.transform.position).magnitude;
+        if (distance > 80)
         {
             Debug.Log("0分物体不会消失");
         }
-        if (distance<3||distance>2)
+        if (distance < 80 && distance > 70)
         {
-            Debug.Log("1分物体消失");
+            Destroy(one);
         }
-        if (distance < 2 || distance > 1)
+        if (distance < 70 && distance > 60)
         {
+            Destroy(one);
             Debug.Log("2分物体消失");
         }
-        if (distance < 1 || distance > 0.5)
+        if (distance < 60 && distance > 30)
         {
+            Destroy(one);
             Debug.Log("3分物体消失");
         }
-        if (distance < 0.5 || distance > 0)
+        if (distance < 30 && distance > 0)
         {
+            Destroy(one);
             Debug.Log("5分物体消失");
         }
     }
 
 
-    public void PointButton()
+    public void PointButtonone()
     {
-        if (true)
+        //判断掉落路径上是否有物品
+        if (listone != null)
         {
+            foreach (var item in listone)
+            {
+                if (item != null)
 
+                {
+                    Debug.Log(item.name);
+                    Far(item,BtnOne.gameObject);
+                }
+                else
+                {
+                    Debug.Log("sss");
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("没有物品掉落");
         }
     }
+    public void PointButtontwo()
+    {
+        //判断掉落路径上是否有物品
+        if (listtwo != null)
+        {
+            foreach (var item in listtwo)
+            {
+                if (item != null)
+
+                {
+                    Far(item, BtnTwo.gameObject);
+                    Debug.Log(item.name);
+                }
+                else
+                {
+                    Debug.Log("sss");
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("没有物品掉落");
+        }
+    }
+
+    public void PointButtonthree()
+    {
+        //判断掉落路径上是否有物品
+        if (listthree != null)
+        {
+            foreach (var item in listthree)
+            {
+                if (item != null)
+                {
+                    Far(item, BtnThree.gameObject);
+                    Debug.Log(item.name);
+                }
+                else
+                {
+                    Debug.Log("sss");
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("没有物品掉落");
+        }
+    }
+
+    public void PointButtonfour()
+    {
+        //判断掉落路径上是否有物品
+        if (listfour != null)
+        {
+            foreach (var item in listfour)
+            {
+                if (item != null)
+
+                {
+                    Far(item, BtnFour.gameObject);
+                    Debug.Log(item.name);
+                }
+                else
+                {
+                    Debug.Log("sss");
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("没有物品掉落");
+        }
+    }
+
 
     /// <summary>
     /// 背景移动
