@@ -59,6 +59,15 @@ public class Gameui : MonoBehaviour
     public Button BtnTwo;
     public Button BtnThree;
     public Button BtnFour;
+
+    public AudioClip rightone;
+    public AudioClip righttwo;
+    public AudioClip rightthree;
+    public AudioClip rightfour;
+    public AudioClip errone;
+    public AudioClip errtwo;
+    public AudioClip errthree;
+    public AudioClip errfour;
     private void Start()
     {
         a = beijing.transform.position;//锁定背景原来的位置
@@ -71,8 +80,7 @@ public class Gameui : MonoBehaviour
         anil = qingwa.transform.GetComponent<Animator>();
         anil.Play("idle");
     }
-    public AudioClip right;
-    public AudioClip err;
+    
     private void Update()
     {
         Diaoluo();
@@ -154,55 +162,39 @@ public class Gameui : MonoBehaviour
     /// </summary>
     /// <param name="one"></param>
     /// <param name="two"></param>
-    public void Far(GameObject one, GameObject two)
+    public void Far(GameObject one, GameObject two,int number)
     {
         float distance = (one.transform.position - two.transform.position).magnitude;
         if (distance > 80)
         {
-            Debug.Log("0分物体不会消失");
-            Debug.Log("播放失败音效" + "扣血");
-            this.GetComponent<AudioSource>().clip = err;
-            this.GetComponent<AudioSource>().Play();
+            AudioPlay(1, number);
         }
         if (distance < 80 && distance > 70)
         {
             Destroy(one);
-            Debug.Log("播放成功音效");
-            this.GetComponent<AudioSource>().clip = right;
-            this.GetComponent<AudioSource>().Play();
+            AudioPlay(0, number);
         }
         if (distance < 70 && distance > 60)
         {
             Destroy(one);
-            Debug.Log("2分物体消失");
-            Debug.Log("播放成功音效");
-            this.GetComponent<AudioSource>().clip = right;
-            this.GetComponent<AudioSource>().Play();
+            AudioPlay(0, number);
         }
         if (distance < 60 && distance > 30)
         {
             Destroy(one);
-            Debug.Log("3分物体消失");
-            Debug.Log("播放成功音效");
-            this.GetComponent<AudioSource>().clip = right;
-            this.GetComponent<AudioSource>().Play();
+            AudioPlay(0, number);
         }
         if (distance < 30 && distance > 0)
         {
             Destroy(one);
-            Debug.Log("5分物体消失");
-            Debug.Log("播放成功音效");
-            this.GetComponent<AudioSource>().clip = right;
-            this.GetComponent<AudioSource>().Play();
+            AudioPlay(0, number);
         }
     }
 
     private Animator anil;
     public void PointButtonone()
     {
-     
         anil.Play("1");
-        Debug.Log("播放动画1");
         //判断掉落路径上是否有物品
         if (listone != null)
         {
@@ -212,23 +204,22 @@ public class Gameui : MonoBehaviour
 
                 {
                     Debug.Log(item.name);
-                    Far(item,BtnOne.gameObject);
+                    Far(item,BtnOne.gameObject,1);
                 }
                 else
                 {
-                    Debug.Log("播放失败音效" + "扣血");
+                    AudioPlay(1,1);
                 }
             }
         }
         else
         {
-            Debug.Log("播放失败音效" + "扣血");
+            AudioPlay(1, 1);
         }
     }
     public void PointButtontwo()
     {
         anil.Play("2");
-        Debug.Log("播放动画2");
         //判断掉落路径上是否有物品
         if (listtwo != null)
         {
@@ -237,25 +228,24 @@ public class Gameui : MonoBehaviour
                 if (item != null)
 
                 {
-                    Far(item, BtnTwo.gameObject);
+                    Far(item, BtnTwo.gameObject,2);
                     Debug.Log(item.name);
                 }
                 else
                 {
-                    Debug.Log("播放失败音效"+"扣血");
+                    AudioPlay(1, 2);
                 }
             }
         }
         else
         {
-            Debug.Log("播放失败音效" + "扣血");
+            AudioPlay(1, 2);
         }
     }
 
     public void PointButtonthree()
     {
         anil.Play("3");
-        Debug.Log("播放动画3");
         //判断掉落路径上是否有物品
         if (listthree != null)
         {
@@ -263,25 +253,24 @@ public class Gameui : MonoBehaviour
             {
                 if (item != null)
                 {
-                    Far(item, BtnThree.gameObject);
+                    Far(item, BtnThree.gameObject,3);
                     Debug.Log(item.name);
                 }
                 else
                 {
-                    Debug.Log("播放失败音效");
+                    AudioPlay(1, 3);
                 }
             }
         }
         else
         {
-            Debug.Log("播放失败音效");
+            AudioPlay(1, 3);
         }
     }
 
     public void PointButtonfour()
     {
         anil.Play("4");
-        Debug.Log("播放动画4");
         //判断掉落路径上是否有物品
         if (listfour != null)
         {
@@ -290,18 +279,18 @@ public class Gameui : MonoBehaviour
                 if (item != null)
 
                 {
-                    Far(item, BtnFour.gameObject);
+                    Far(item, BtnFour.gameObject,4);
                     Debug.Log(item.name);
                 }
                 else
                 {
-                    Debug.Log("播放失败音效");
+                    AudioPlay(1, 4);
                 }
             }
         }
         else
         {
-            Debug.Log("播放失败音效");
+            AudioPlay(1, 4);
         }
     }
 
@@ -322,4 +311,59 @@ public class Gameui : MonoBehaviour
         }
     }
 
+
+
+    /// <summary>
+    /// 音频播放
+    /// </summary>
+    /// <param name="a">0正确 1 错误</param>
+    /// <param name="b">是哪个btn</param>
+    public void AudioPlay(int a ,int b)
+    {
+
+        Debug.Log(a+"}}}}}}}}"+b);
+        if (a==0)
+        {
+            if (b==1)
+            {
+                this.GetComponent<AudioSource>().clip = rightone;
+            }
+            if (b == 2)
+            {
+                this.GetComponent<AudioSource>().clip = righttwo;
+            }
+            if (b == 3)
+            {
+
+                this.GetComponent<AudioSource>().clip = rightthree;
+            }
+            if (b == 4)
+            {
+                this.GetComponent<AudioSource>().clip = rightfour;
+            }
+        }
+        if (a==1)
+        {
+            if (b == 1)
+            {
+                this.GetComponent<AudioSource>().clip = errone;
+            }
+            if (b == 2)
+            {
+                this.GetComponent<AudioSource>().clip = errtwo;
+            }
+            if (b == 3)
+            {
+                this.GetComponent<AudioSource>().clip = errthree;
+
+            }
+            if (b == 4)
+            {
+                this.GetComponent<AudioSource>().clip = errfour;
+            }
+        }
+       
+        this.GetComponent<AudioSource>().Play();
+        
+    }
 }
