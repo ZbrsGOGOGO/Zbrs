@@ -4453,7 +4453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6014,6 +6014,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4e0ec227fdd9e4e9f360ac43e9bda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Point: 0
+  Blone: 0
+  MaxBlond: 100
+  MixBlond: 0
+  pointText: {fileID: 1128178178}
   qingwa: {fileID: 1686803777}
   Fanhui: {fileID: 343721246}
   ShangyigePanel: {fileID: 2098296031}

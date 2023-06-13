@@ -7,6 +7,17 @@ public class Gameui : MonoBehaviour
 {
 
 
+    /// <summary>
+    /// 分数 当前血量和最高最低血量
+    /// </summary>
+    public float Point;
+    public float Blone;
+    public float MaxBlond =100f;
+    public float MixBlond = 0f;
+    public Text pointText;
+    /// <summary>
+    /// player
+    /// </summary>
     public GameObject qingwa;
     /// <summary>
     /// 返回按钮
@@ -49,7 +60,7 @@ public class Gameui : MonoBehaviour
     /// //时间
     /// </summary>
     float timer = 0;
-
+    #region 可优化
     public Sprite one;
     public Sprite two;
     public Sprite three;
@@ -68,6 +79,7 @@ public class Gameui : MonoBehaviour
     public AudioClip errtwo;
     public AudioClip errthree;
     public AudioClip errfour;
+    #endregion
     private void Start()
     {
         a = beijing.transform.position;//锁定背景原来的位置
@@ -79,12 +91,14 @@ public class Gameui : MonoBehaviour
         BtnFour.onClick.AddListener(PointButtonfour);
         anil = qingwa.transform.GetComponent<Animator>();
         anil.Play("idle");
+        Point = 0f;
     }
     
     private void Update()
     {
         Diaoluo();
         Timer();
+        pointText.text = "我是ZBR" + Point;
     }
 
     /// <summary>
@@ -139,14 +153,12 @@ public class Gameui : MonoBehaviour
             Sphere.transform.position = pointtwo.transform.position;
             Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = two;
             listtwo.Add(Sphere);
-
         }
         if (a == 3)
         {
             Sphere.transform.position = pointthree.transform.position;
             Sphere.transform.GetChild(0).transform.GetComponent<Image>().sprite = three;
             listthree.Add(Sphere);
-
         }
         if (a == 4)
         {
@@ -168,26 +180,46 @@ public class Gameui : MonoBehaviour
         if (distance > 80)
         {
             AudioPlay(1, number);
+            Point -= 100f;
         }
         if (distance < 80 && distance > 70)
         {
             Destroy(one);
             AudioPlay(0, number);
+            Point += 100f;
         }
         if (distance < 70 && distance > 60)
         {
             Destroy(one);
             AudioPlay(0, number);
+            Point += 150f;
         }
         if (distance < 60 && distance > 30)
         {
             Destroy(one);
             AudioPlay(0, number);
+            Point += 200f;
         }
         if (distance < 30 && distance > 0)
         {
             Destroy(one);
             AudioPlay(0, number);
+            Point += 300f;
+        }
+        switch (number)
+        {
+            case 1:
+                listone.Clear();
+                break;
+            case 2:
+                listtwo.Clear();
+                break;
+            case 3:
+                listthree.Clear();
+                break;
+            case 4:
+                listfour.Clear();
+                break;
         }
     }
 
@@ -209,12 +241,14 @@ public class Gameui : MonoBehaviour
                 else
                 {
                     AudioPlay(1,1);
+                    Point -= 100f;
                 }
             }
         }
         else
         {
             AudioPlay(1, 1);
+            Point -= 100f;
         }
     }
     public void PointButtontwo()
@@ -234,12 +268,14 @@ public class Gameui : MonoBehaviour
                 else
                 {
                     AudioPlay(1, 2);
+                    Point -= 100f;
                 }
             }
         }
         else
         {
             AudioPlay(1, 2);
+            Point -= 100f;
         }
     }
 
@@ -259,12 +295,14 @@ public class Gameui : MonoBehaviour
                 else
                 {
                     AudioPlay(1, 3);
+                    Point -= 100f;
                 }
             }
         }
         else
         {
             AudioPlay(1, 3);
+            Point -= 100f;
         }
     }
 
@@ -285,12 +323,14 @@ public class Gameui : MonoBehaviour
                 else
                 {
                     AudioPlay(1, 4);
+                    Point -= 100f;
                 }
             }
         }
         else
         {
             AudioPlay(1, 4);
+            Point -= 100f;
         }
     }
 
