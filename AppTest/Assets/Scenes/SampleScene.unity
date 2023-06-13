@@ -1186,8 +1186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc395351afefbd418328ccbf3036e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  right: {fileID: 8300000, guid: bdf2c8d836d9de847b5cd94ff9a14a8b, type: 3}
-  err: {fileID: 8300000, guid: 852f4f2d008850045935c53936aa4fbe, type: 3}
 --- !u!82 &273089252
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5142,7 +5140,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1324854764
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5151,7 +5149,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 17b1a9fda405d3d4da79007afc397dd3, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -5159,7 +5157,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1341107886
 GameObject:
   m_ObjectHideFlags: 0
@@ -5734,8 +5733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc395351afefbd418328ccbf3036e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  right: {fileID: 8300000, guid: bdf2c8d836d9de847b5cd94ff9a14a8b, type: 3}
-  err: {fileID: 8300000, guid: 852f4f2d008850045935c53936aa4fbe, type: 3}
 --- !u!82 &1445269536
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7423,7 +7420,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1686803779
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7440,7 +7437,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1699681149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7754,8 +7752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc395351afefbd418328ccbf3036e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  right: {fileID: 8300000, guid: bdf2c8d836d9de847b5cd94ff9a14a8b, type: 3}
-  err: {fileID: 8300000, guid: 852f4f2d008850045935c53936aa4fbe, type: 3}
 --- !u!82 &1760668691
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8437,8 +8433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc395351afefbd418328ccbf3036e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  right: {fileID: 8300000, guid: bdf2c8d836d9de847b5cd94ff9a14a8b, type: 3}
-  err: {fileID: 8300000, guid: 852f4f2d008850045935c53936aa4fbe, type: 3}
 --- !u!82 &1856666263
 AudioSource:
   m_ObjectHideFlags: 0

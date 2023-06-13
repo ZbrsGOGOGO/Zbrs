@@ -68,6 +68,8 @@ public class Gameui : MonoBehaviour
         BtnTwo.onClick.AddListener(PointButtontwo);
         BtnThree.onClick.AddListener(PointButtonthree);
         BtnFour.onClick.AddListener(PointButtonfour);
+        anil = qingwa.transform.GetComponent<Animator>();
+        anil.Play("idle");
     }
     public AudioClip right;
     public AudioClip err;
@@ -198,8 +200,8 @@ public class Gameui : MonoBehaviour
     private Animator anil;
     public void PointButtonone()
     {
-        anil =  qingwa.transform.GetComponent<Animator>();
-        anil.SetInteger("one", 1);
+     
+        anil.Play("1");
         Debug.Log("播放动画1");
         //判断掉落路径上是否有物品
         if (listone != null)
@@ -225,7 +227,7 @@ public class Gameui : MonoBehaviour
     }
     public void PointButtontwo()
     {
-        anil.SetInteger("two", 1);
+        anil.Play("2");
         Debug.Log("播放动画2");
         //判断掉落路径上是否有物品
         if (listtwo != null)
@@ -252,7 +254,7 @@ public class Gameui : MonoBehaviour
 
     public void PointButtonthree()
     {
-        anil.SetInteger("three", 1);
+        anil.Play("3");
         Debug.Log("播放动画3");
         //判断掉落路径上是否有物品
         if (listthree != null)
@@ -278,7 +280,7 @@ public class Gameui : MonoBehaviour
 
     public void PointButtonfour()
     {
-        anil.SetInteger("four", 1);
+        anil.Play("4");
         Debug.Log("播放动画4");
         //判断掉落路径上是否有物品
         if (listfour != null)
@@ -309,14 +311,8 @@ public class Gameui : MonoBehaviour
     /// </summary>
     private void Timer()//背景场地移动
     {
-
-        //float f = Mathf.Repeat(speed * Time.time, 1920);
-        //beijing.transform.position = a - Vector3.right * f;
-        //beiingone.transform.position = b - Vector3.right * f;
-
         ////方法2：
-        timer += Time.deltaTime;//每帧的增加时间
-                                //背景位移
+        timer += Time.deltaTime;
         beijing.transform.position -= Vector3.right * speed * Time.deltaTime;
         beiingone.transform.position -= Vector3.right * speed * Time.deltaTime;
         if (timer > 34.16)
